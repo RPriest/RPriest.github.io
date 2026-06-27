@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Bamgbose | DevSecOps Engineer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; }
+        header { background: #161b22; padding: 60px 20px; text-align: center; border-bottom: 1px solid #30363d; }
+        header h1 { font-size: 2.5em; color: #58a6ff; margin-bottom: 10px; }
+        header p { font-size: 1.1em; color: #8b949e; margin-bottom: 20px; }
+        .badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+        .badge { background: #21262d; border: 1px solid #30363d; padding: 6px 14px; border-radius: 20px; font-size: 0.85em; color: #58a6ff; }
+        .links { margin-top: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9em; }
+        .btn-primary { background: #238636; color: white; }
+        .btn-secondary { background: #21262d; color: #58a6ff; border: 1px solid #30363d; }
+        section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        h2 { color: #58a6ff; font-size: 1.4em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #30363d; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .skill-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
+        .skill-card h3 { color: #58a6ff; margin-bottom: 12px; font-size: 1em; }
+        .skill-card ul { list-style: none; }
+        .skill-card ul li { padding: 4px 0; font-size: 0.9em; color: #8b949e; }
+        .skill-card ul li::before { content: "✅ "; }
+        .project-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+        .project-card h3 { color: #58a6ff; margin-bottom: 10px; font-size: 1.2em; }
+        .project-card p { color: #8b949e; margin-bottom: 15px; font-size: 0.95em; line-height: 1.6; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .tag { background: #21262d; border: 1px solid #30363d; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; color: #58a6ff; }
+        .findings { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 15px; margin-bottom: 15px; }
+        .findings p { color: #8b949e; font-size: 0.9em; margin: 6px 0; line-height: 1.5; }
+        .findings span { color: #f85149; font-weight: bold; }
+        .findings span.green { color: #3fb950; }
+        .project-link { display: inline-block; background: #238636; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9em; font-weight: bold; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .cert-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; text-align: center; }
+        .cert-card .icon { font-size: 2em; margin-bottom: 10px; }
+        .cert-card h3 { color: #c9d1d9; font-size: 1em; margin-bottom: 5px; }
+        .cert-card p { color: #8b949e; font-size: 0.85em; margin: 3px 0; }
+        .cert-card a { color: #58a6ff; text-decoration: none; font-size: 0.85em; }
+        .cert-card a:hover { text-decoration: underline; }
+        .contact { text-align: center; background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 40px; }
+        .contact p { color: #8b949e; margin-bottom: 20px; line-height: 1.6; }
+        footer { text-align: center; padding: 30px; color: #8b949e; font-size: 0.85em; border-top: 1px solid #30363d; margin-top: 60px; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8em; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Samuel Bamgbose</h1>
+    <p>DevSecOps Engineer | Penetration Tester | Cisco Certified</p>
+    <div class="badges">
+        <span class="badge">🛡️ DevSecOps Pro</span>
+        <span class="badge">🏗️ Terraform Certified</span>
+        <span class="badge">🌐 Cisco Certified</span>
+        <span class="badge">☁️ AWS</span>
+        <span class="badge">🔍 Penetration Tester</span>
+    </div>
+    <div class="links">
+        <a href="https://github.com/RPriest" class="btn btn-primary">GitHub Portfolio</a>
+        <a href="https://www.linkedin.com/in/samuel-tofunmi-bamgbose-283405116/" class="btn btn-secondary">LinkedIn</a>
+    </div>
+</header>
+
+<section>
+    <h2>🔧 Skills & Tools</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>🔐 Security</h3>
+            <ul>
+                <li>SAST (Semgrep, CodeQL)</li>
+                <li>DAST (ZAP by Checkmarx)</li>
+                <li>SCA (Dependabot)</li>
+                <li>SBOM (CycloneDX)</li>
+                <li>Penetration Testing</li>
+                <li>OpenSSF Scorecard</li>
+                <li>osv-scanner</li>
+            </ul>
+        </div>
+        <div class="skill-card">
+            <h3>☁️ Cloud & Infra</h3>
+            <ul>
+                <li>AWS EC2</li>
+                <li>AWS IAM</li>
+                <li>CloudFormation</li>
+                <li>Security Groups</li>
+                <li>Terraform</li>
+            </ul>
+        </div>
+        <div class="skill-card">
+            <h3>⚙️ CI/CD & Automation</h3>
+            <ul>
+                <li>GitHub Actions</li>
+                <li>Branch Protection</li>
+                <li>CODEOWNERS</li>
+                <li>Dependency Review</li>
+                <li>YAML</li>
+                <li>Git</li>
+            </ul>
+        </div>
+        <div class="skill-card">
+            <h3>🌐 Networking</h3>
+            <ul>
+                <li>TCP/IP</li>
+                <li>Subnetting & CIDR</li>
+                <li>Cisco Networking</li>
+                <li>VPC Security</li>
+                <li>NAT & Routing</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>📌 Featured Project</h2>
+    <div class="project-card">
+        <h3>🔐 PyGoat DevSecOps Pipeline</h3>
+        <p>
+            A fully automated DevSecOps security pipeline built on PyGoat — a deliberately 
+            vulnerable Python web application. This project demonstrates real-world security 
+            controls embedded across the entire software delivery lifecycle, from code commit 
+            to production deployment on AWS EC2.
+        </p>
+        <div class="tags">
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Semgrep</span>
+            <span class="tag">CodeQL</span>
+            <span class="tag">ZAP by Checkmarx</span>
+            <span class="tag">AWS EC2</span>
+            <span class="tag">CloudFormation</span>
+            <span class="tag">CycloneDX</span>
+            <span class="tag">Dependabot</span>
+            <span class="tag">OpenSSF Scorecard</span>
+            <span class="tag">osv-scanner</span>
+        </div>
+        <div class="findings">
+            <p>🔴 <strong>SAST:</strong> <span>199 code scanning findings</span> identified by CodeQL — Code Injection, SSRF, Uncontrolled Command Line vulnerabilities</p>
+            <p>🔴 <strong>DAST:</strong> <span>16 alerts</span> detected by automated ZAP baseline scan against live AWS deployment</p>
+            <p>🔴 <strong>SBOM:</strong> <span>100 known vulnerabilities</span> identified across 34 packages — 99 with available fixes</p>
+            <p>🟡 <strong>OpenSSF Scorecard:</strong> Security posture improved from <span>2.6 → 2.8</span> after implementing branch protection controls</p>
+            <p>🟢 <strong>Dependency Review:</strong> <span class="green">Successfully blocked</span> GitPython 3.1.29 (Critical — RCE) from merging via PR gate</p>
+            <p>🟢 <strong>Branch Protection:</strong> <span class="green">Zero unreviewed commits</span> reaching master — CODEOWNERS enforcing mandatory code review on every PR</p>
+        </div>
+        <a href="https://github.com/RPriest/pygoat" class="project-link">View on GitHub →</a>
+    </div>
+</section>
+
+<section>
+    <h2>🏆 Certifications</h2>
+    <div class="cert-grid">
+        <div class="cert-card">
+            <div class="icon">🎓</div>
+            <h3>DevSecOps Pro</h3>
+            <p>Mission InfoSec Academy</p>
+            <p>June 2026 • 11 CPE Hours</p>
+        </div>
+        <div class="cert-card">
+            <div class="icon">🏗️</div>
+            <h3>Terraform</h3>
+            <p>KodeKloud</p>
+            <p>June 2026</p>
+            <br>
+            <a href="https://learn.kodekloud.com/user/certificate/87c86b2c-40fa-498c-a18c-a73e102c10a1" target="_blank">View Certificate →</a>
+        </div>
+        <div class="cert-card">
+            <div class="icon">🌐</div>
+            <h3>Cisco Certified</h3>
+            <p>Networking Fundamentals</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>📬 Get In Touch</h2>
+    <div class="contact">
+        <p>
+            I'm actively open to DevSecOps internship and entry-level opportunities 
+            where I can continue building real-world security pipelines and contributing 
+            to a team that takes security seriously.
+        </p>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/samuel-tofunmi-bamgbose-283405116/" class="btn btn-primary">Connect on LinkedIn</a>
+            <a href="https://github.com/RPriest" class="btn btn-secondary">View GitHub</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Samuel Bamgbose • DevSecOps Engineer • Built with GitHub Pages</p>
+</footer>
+
+</body>
+</html>
