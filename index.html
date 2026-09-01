@@ -33,7 +33,9 @@
         .findings p { color: #8b949e; font-size: 0.9em; margin: 6px 0; line-height: 1.5; }
         .findings span { color: #f85149; font-weight: bold; }
         .findings span.green { color: #3fb950; }
+        .project-links { display: flex; gap: 12px; flex-wrap: wrap; }
         .project-link { display: inline-block; background: #238636; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9em; font-weight: bold; }
+        .project-link-secondary { display: inline-block; background: #21262d; color: #58a6ff; border: 1px solid #30363d; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9em; font-weight: bold; }
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
         .cert-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; text-align: center; }
         .cert-card .icon { font-size: 2em; margin-bottom: 10px; }
@@ -75,20 +77,22 @@
         <div class="skill-card">
             <h3>🔐 Security</h3>
             <ul>
-                <li>SAST (Semgrep, CodeQL)</li>
+                <li>SAST (Semgrep, CodeQL, SonarQube)</li>
                 <li>DAST (ZAP by Checkmarx)</li>
-                <li>SCA (Dependabot)</li>
+                <li>SCA (Dependabot, OWASP Dependency-Check)</li>
                 <li>SBOM (CycloneDX)</li>
                 <li>Penetration Testing</li>
                 <li>OpenSSF Scorecard</li>
                 <li>osv-scanner</li>
+                <li>DefectDojo</li>
             </ul>
         </div>
         <div class="skill-card">
             <h3>☁️ Cloud & Infra</h3>
             <ul>
-                <li>AWS EC2</li>
-                <li>AWS IAM</li>
+                <li>AWS EC2, EKS, ECR</li>
+                <li>AWS IAM & OIDC</li>
+                <li>AWS Secrets Manager & KMS</li>
                 <li>CloudFormation</li>
                 <li>Security Groups</li>
                 <li>Terraform</li>
@@ -98,11 +102,12 @@
             <h3>⚙️ CI/CD & Automation</h3>
             <ul>
                 <li>GitHub Actions</li>
+                <li>Jenkins (20+ stage pipelines)</li>
+                <li>ArgoCD & GitOps</li>
                 <li>Branch Protection</li>
                 <li>CODEOWNERS</li>
                 <li>Dependency Review</li>
-                <li>YAML</li>
-                <li>Git</li>
+                <li>YAML / Git</li>
             </ul>
         </div>
         <div class="skill-card">
@@ -119,7 +124,46 @@
 </section>
 
 <section>
-    <h2>📌 Featured Project</h2>
+    <h2>📌 Featured Projects</h2>
+
+    <div class="project-card">
+        <h3>🎬 End-to-End DevSecOps Pipeline on AWS EKS (Netflix Clone)</h3>
+        <p>
+            A 4-phase build taking a Netflix-clone frontend from a bare AWS account to a
+            fully monitored, GitOps-deployed application on Kubernetes. AWS account hardening
+            → a 20+ stage Jenkins pipeline with 8+ security scanners → ArgoCD GitOps deployment
+            to EKS → centralized vulnerability management in DefectDojo → Prometheus/Grafana
+            monitoring.
+        </p>
+        <div class="tags">
+            <span class="tag">AWS EKS</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">ArgoCD</span>
+            <span class="tag">SonarQube</span>
+            <span class="tag">Semgrep</span>
+            <span class="tag">Trivy</span>
+            <span class="tag">OWASP Dependency-Check</span>
+            <span class="tag">ZAP</span>
+            <span class="tag">CycloneDX</span>
+            <span class="tag">DefectDojo</span>
+            <span class="tag">Prometheus / Grafana</span>
+            <span class="tag">OIDC</span>
+        </div>
+        <div class="findings">
+            <p>🔴 <strong>Aggregated Findings:</strong> <span>113 findings</span> centralized in DefectDojo across 8+ independent scanners</p>
+            <p>🔴 <strong>DAST:</strong> <span>16 alerts</span> caught by ZAP against the live AWS deployment</p>
+            <p>🔴 <strong>SBOM:</strong> <span>100 known CVEs</span> surfaced across 34 dependencies via CycloneDX + osv-scanner</p>
+            <p>🟡 <strong>OpenSSF Scorecard:</strong> Security posture improved from <span>2.6 → 2.8</span></p>
+            <p>🟢 <strong>Zero Long-Lived Credentials:</strong> <span class="green">OIDC end to end</span> for CI/CD — no static AWS keys anywhere</p>
+            <p>🟢 <strong>GitOps Architecture:</strong> <span class="green">Jenkins never touches the cluster directly</span> — only ArgoCD does, limiting blast radius on compromise</p>
+        </div>
+        <div class="project-links">
+            <a href="https://github.com/RPriest/Netflix-Clone-K8S-End-to-End-Project" class="project-link">View on GitHub →</a>
+            <a href="https://rpriest0.medium.com/%EF%B8%8F-end-to-end-devsecops-kubernetes-project-phase-1-of-4-7b870ce22666" class="project-link-secondary">Phase 1 Write-up →</a>
+            <a href="https://rpriest0.medium.com/end-to-end-devsecops-kubernetes-project-phase-2-of-4-07d6b4da0ed6" class="project-link-secondary">Phase 2 Write-up →</a>
+        </div>
+    </div>
+
     <div class="project-card">
         <h3>🔐 PyGoat DevSecOps Pipeline</h3>
         <p>
@@ -148,7 +192,9 @@
             <p>🟢 <strong>Dependency Review:</strong> <span class="green">Successfully blocked</span> GitPython 3.1.29 (Critical — RCE) from merging via PR gate</p>
             <p>🟢 <strong>Branch Protection:</strong> <span class="green">Zero unreviewed commits</span> reaching master — CODEOWNERS enforcing mandatory code review on every PR</p>
         </div>
-        <a href="https://github.com/RPriest/pygoat" class="project-link">View on GitHub →</a>
+        <div class="project-links">
+            <a href="https://github.com/RPriest/pygoat" class="project-link">View on GitHub →</a>
+        </div>
     </div>
 </section>
 
